@@ -60,5 +60,23 @@
   <ItemGroup>
     <EmbeddedResource Include="gui.stetic" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SimpleWeatherTrayShared\Plugins\External.Weather.Gov.3.Standard\External.Weather.Gov.3.Standard.csproj">
+      <Project>{80E8FEF1-BAF1-4305-8046-215C3C8F2593}</Project>
+      <Name>External.Weather.Gov.3.Standard</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimpleWeatherTrayShared\Plugins\Internal.Location.Standard\Internal.Location.Standard.csproj">
+      <Project>{3D9A0B68-3616-4C4D-A272-27ACE1CA44C9}</Project>
+      <Name>Internal.Location.Standard</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimpleWeatherTrayShared\Plugins\Internal.SunRiseSet.Stanard\Internal.SunRiseSet.Stanard.csproj">
+      <Project>{4788CA6A-9951-4454-B88D-5CF66376813F}</Project>
+      <Name>Internal.SunRiseSet.Stanard</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimpleWeatherTrayShared\WeatherDesktop.Shared.Standard\weather.shared.standard\weather.shared.standard.csproj">
+      <Project>{E5778487-48A0-4F2F-8369-039B7C1A330E}</Project>
+      <Name>weather.shared.standard</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -31,7 +31,7 @@ namespace SimpleWeatherTrayGtkEdition
 
 		private MessageBox mBox = MessageBox.Invoke();
 
-		private Input input = Input.Invoke();
+		private WeatherDesktop.Share.Input input = WeatherDesktop.Share.Input.Invoke();
 
 		private string g_CurrentWeatherType;
 
