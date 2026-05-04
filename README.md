@@ -1,46 +1,24 @@
+# SimpleWeatherTray
+`C#` `GTK` `Plugin-Architecture` `Desktop-Application`
 
-# Weather Widget System
+A lightweight, modular weather widget designed for stability and low resource usage.
 
-**A Modular, Zero-Bloat Desktop Client**
+## Context & Story
+Most weather apps are bloated, resource-heavy, and prone to breaking when APIs change. SimpleWeatherTray was built to solve this problem by focusing on stability and modularity. The app uses a plugin-based architecture, ensuring that the core system remains unaffected by external changes, such as API updates.
 
-I built this because I wanted a weather widget that actually stayed out of the way. Most weather apps are bloated, resource-heavy, and break the second an API changes. This is my solution to that.
+## Architecture & Decisions
+- **Plugin-Based Design**: Decouples the core application from data sources, enabling seamless integration of new plugins.
+- **Interface-First Approach**: The UI and core logic are agnostic to data sources, relying solely on defined interfaces.
+- **Low Resource Footprint**: Designed to run as a background task with minimal system impact.
+- **Error Resilience**: External changes (e.g., API updates) only require plugin updates, not core refactoring.
 
-### Tech Stack
+## Key Features
+- **Modular Plugins**: Easily swap or update data sources without affecting the main application.
+- **Lightweight Execution**: Runs efficiently in the background with near-zero resource usage.
+- **Customizable Data Sources**: Supports multiple weather APIs and local data sources via plugins.
+- **Robust Error Handling**: Ensures reliability even when external services fail.
 
--   **Runtime:** C# / .NET
-    
--   **UI:** GTK (Native Desktop)
-    
--   **Architecture:** Plugin-based (Interfaces & DTOs)
-    
-
-### The Mission
-
-The goal was simple: **Stability over features.** I’ve seen too many projects suffer from "feature creep" until they become unstable. I architected this so the core widget knows absolutely nothing about where the data comes from. It only knows the interfaces. If the National Weather Service changes their API tomorrow, I just swap one plugin file. The rest of the app never even notices.
-
-### Key Decisions
-
--   **Interface-First:** Everything is decoupled. The UI is agnostic, meaning it doesn't care if the data comes from a gov API or a local sensor.
-    
--   **The Trade-off:** It took more work upfront to build the plugin loading system, but it saved me from ever having to refactor the main app when a third-party vendor changes their JSON.
-    
--   **Low Footprint:** It’s a background task. It should use near-zero resources, so I kept the feature list small and the execution tight.
-    
-
-### Why it Matters
-
--   **Easy Maintenance:** API changes don't break the whole system—just the adapter.
-    
--   **Performance:** It’s lightweight enough to run in the background 24/7 without you noticing.
-    
--   **Reliability:** It’s built to survive external changes, not just look good for a week.
-    
-
-### Quick Start
-
-Bash
-
-```
-dotnet build SimpleWeatherTrayGtkEdition/SimpleWeatherTrayGtkEdition.csproj
-dotnet run --project SimpleWeatherTrayGtkEdition/SimpleWeatherTrayGtkEdition.csproj
-```
+## Why It Matters
+- **Maintenance-Friendly**: API changes don't break the system—only the affected plugin.
+- **Performance-Oriented**: Lightweight enough to run unnoticed in the background.
+- **Future-Proof**: Built to adapt to external changes without requiring major overhauls.
